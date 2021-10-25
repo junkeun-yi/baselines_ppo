@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/junkeuny/models/freeway_1m_ppo2/freeway_1m_ppo2"
+all_model_checkpoint_paths: "/Users/junkeuny/models/freeway_1m_ppo2/freeway_1m_ppo2"

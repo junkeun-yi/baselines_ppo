@@ -1,7 +1,8 @@
 import tensorflow as tf
 import functools
 
-from baselines.common.tf_util import get_session, save_variables, load_variables
+# from baselines.common.tf_util import get_session, save_variables, load_variables
+from baselines.common.tf_util import get_session, save_state, load_state
 from baselines.common.tf_util import initialize
 
 try:
@@ -122,8 +123,10 @@ class Model(object):
         self.value = act_model.value
         self.initial_state = act_model.initial_state
 
-        self.save = functools.partial(save_variables, sess=sess)
-        self.load = functools.partial(load_variables, sess=sess)
+        # self.save = functools.partial(save_variables, sess=sess)
+        # self.load = functools.partial(load_variables, sess=sess)
+        self.save = functools.partial(save_state, sess=sess)
+        self.load = functools.partial(load_state, sess=sess)
 
         initialize()
         global_variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope="")
